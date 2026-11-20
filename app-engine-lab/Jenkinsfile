@@ -18,7 +18,7 @@ pipeline {
                     . venv/bin/activate
                     python --version
                     pip install --upgrade pip setuptools wheel
-                    pip install -r requirements.txt
+                    pip install -r app-engine-lab/requirements.txt
                 '''
             }
         }
@@ -48,7 +48,7 @@ pipeline {
                 echo "===== Deploying App Engine ====="
                 sh '''
                     . venv/bin/activate
-                    gcloud app deploy app.yaml --quiet --verbosity=info
+                    gcloud app deploy app-engine-lab/app.yaml --quiet --verbosity=info
                 '''
             }
         }
